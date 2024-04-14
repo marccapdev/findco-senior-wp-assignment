@@ -18,7 +18,7 @@ class Voting_System
     {
         // Check if the user has already voted for this post.
         if (self::has_voted($post_id, $ip)) {
-            return false; // User has already voted, prevent duplicate voting.
+            return false;
         }
 
         // Get the stored votes for the post.

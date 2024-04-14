@@ -1,5 +1,4 @@
 <?php
-// If uninstall is not called from WordPress, exit.
 if (!defined('WP_UNINSTALL_PLUGIN')) {
     exit;
 }
@@ -9,10 +8,10 @@ delete_option('article_voting_plugin_options');
 
 // Remove post meta created by the plugin.
 $plugin_posts = get_posts(array(
-    'post_type'      => 'post', // Adjust post type if necessary
-    'posts_per_page' => -1,     // Get all posts
-    'meta_key'       => '_article_voting_votes', // Meta key used by the plugin
-    'fields'         => 'ids',  // Get only post IDs
+    'post_type'      => 'post',
+    'posts_per_page' => -1,
+    'meta_key'       => '_article_voting_votes',
+    'fields'         => 'ids',
 ));
 
 foreach ($plugin_posts as $post_id) {
