@@ -1,0 +1,84 @@
+.voting-block {
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%239849FF' stroke-width='4' stroke-dasharray='10%2c 15' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 10px;
+    padding: 20px;
+    color: #292929;
+}
+
+.voting-block__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.voting-block__text {
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.voting-block__button,
+.voting-block__result {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: transparent;
+    color: inherit;
+    font-weight: 700;
+}
+
+.voting-block__button {
+    width: 85px;
+    padding: 10px 0;
+    border: 1px solid #999999;
+    text-transform: uppercase;
+}
+
+.voting-block__button:disabled {
+    opacity: 0.5;
+}
+
+.voting-block__button:not([disabled]) {
+    cursor: pointer;
+}
+
+.voting-block__button:hover:not([disabled]),
+.voting-block__button:active:not([disabled]) {
+    border-color: #666666;
+}
+
+.voting-block__button:hover:not([disabled])>.voting-block__icon,
+.voting-block__button:active:not([disabled])>.voting-block__icon {
+    fill: #666666;
+}
+
+.voting-block__result {
+    width: 95px;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.voting-block__result.voting-block__result--active {
+    border: 2px solid #0A5EFF;
+}
+
+.voting-block__result--active>.voting-block__icon {
+    fill: #0A5EFF;
+}
+
+.voting-block__icon {
+    width: 16px;
+    fill: #999999;
+}
+
+@media only screen and (max-width: 600px) {
+    .voting-block__row {
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+    .voting-block__row:first-of-type {
+        margin-top: 0;
+    }
+}
